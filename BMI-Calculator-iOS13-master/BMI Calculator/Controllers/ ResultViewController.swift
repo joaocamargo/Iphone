@@ -10,6 +10,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    
     @IBOutlet weak var bmiLabel: UILabel!
     @IBOutlet weak var adviceLabel: UILabel!
     
@@ -17,6 +18,7 @@ class ResultViewController: UIViewController {
     var resultado = "0.0"
 
     override func viewDidLoad() {
+        print("ResultViewController")
         super.viewDidLoad()
         bmiLabel.text = bmiValue
         
@@ -30,24 +32,15 @@ class ResultViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func recalculatePressed(_ sender: UIButton) {
+    @IBAction func recalculatePressed(_ sender: UIButton!) {
         
-        let layout = ResultViewController()
-        let navController = UINavigationController(rootViewController: CalculateViewController(collectionViewLayout: layout))
-        window?.rootViewController = navController
-        
+        //let layout = ResultViewController()
+        //let navController = UINavigationController(rootViewController: CalculateViewController())
+        //window?.rootViewController = navController
+        print("foi 1")
         dismiss(animated: true, completion:nil)
-        print("foi")
+        print("foi 2")
     }
-    
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
